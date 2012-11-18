@@ -63,19 +63,19 @@ Public Function CompareArrays(Array1 As Variant, Array2 As Variant, _
     ResultArray As Variant, Optional CompareMode As VbCompareMethod = vbTextCompare) As Boolean
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ' CompareArrays
-' 
-' 这个函数逐项的比较两个数组 Array1 和 Array2, 比较的结果存放与另一个数组 ResultArray 中. 结果数组中的
-' 值可以是 -1，0或者+1. -1 表示第一个数组中的项小于第二个数组，0表示相等，+1表示大于. Array1 和 Array2都
-' 必须是已经分配了内存的一维数组，并且数组的大小相等，开始索引也必须相等。结果数组 ResultArray必须是数字
-' 类型的动态数组（通常可以定义为 Long 型).
-' 
-' 如果 Array1 或者 Array2 中包含了对象类型或者用户自定义类型的数据，函数将会报错.
+' This function compares two arrays, Array1 and Array2, element by element, and puts the results of
+' the comparisons in ResultArray. Each element of ResultArray will be -1, 0, or +1. A -1 indicates that
+' the element in Array1 was less than the corresponding element in Array2. A 0 indicates that the
+' elements are equal, and +1 indicates that the element in Array1 is greater than Array2. Both
+' Array1 and Array2 must be allocated single-dimensional arrays, and ResultArray must be dynamic array
+' of a numeric data type (typically Longs). Array1 and Array2 must contain the same number of elements,
+' and have the same lower bound. The LBound of ResultArray will be the same as the data arrays.
 '
-' 比较的规则主要如下:
+' An error will occur if Array1 or Array2 contains an Object or User Defined Type.
 '
-' 如果两个数组项都是数字类型，那么它们将按照数字类型来比较大小如果两个数组项都是数字类型，那么它们将按照
-' 数字类型来比较大小.
-'
+' When comparing elements, the procedure does the following:
+' If both elements are numeric data types, they are compared arithmetically.
+
 ' If one element is a numeric data type and the other is a string and that string is numeric,
 ' then both elements are converted to Doubles and compared arithmetically. If the string is not
 ' numeric, both elements are converted to strings and compared using StrComp, with the
