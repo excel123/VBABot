@@ -1,6 +1,6 @@
 # VBABot （VBA机器人） 
 
-一个简单，易用，高效的Excel VBA模块库集合， 和基于这个模块库开发的一些Excel应用。
+一个简单，易用，高效的Excel VBA模块库集合， 和基于这个模块库开发的一些Excel应用。[详见](https://github.com/FreeTeam/VBABot/wiki/%E5%85%B3%E4%BA%8E-Excel-VBABot)
 
 ------------------
 ### 关于各个模块来源和版权的说明：
